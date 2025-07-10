@@ -1,8 +1,13 @@
 import { Router } from "express";
-import { postRegisterUserController } from "../controller/registerUserController";
+import { postRegisterUserController } from "../controller/user/registerUserController";
+import { getListUserController } from "../controller/user/listUserController";
+import { postLoginUserController } from "../controller/user/loginUserController";
 
 const router = Router();
 
-router.post("/register", postRegisterUserController);
+router.post("/auth/register", postRegisterUserController);
+router.get("/auth/register", getListUserController);
 
-export { router as authRoutes };
+router.post("/auth/login", postLoginUserController);
+
+export { router as Routes };

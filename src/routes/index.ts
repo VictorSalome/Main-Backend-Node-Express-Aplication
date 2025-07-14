@@ -3,13 +3,14 @@ import { postRegisterUserController } from "../controller/auth/registerUserContr
 import { getListUserController } from "../controller/auth/listUserController";
 import { postLoginUserController } from "../controller/auth/loginUserController";
 import { updateUserController } from "../controller/auth/updateUserController";
+import { authenticateJWT } from "../middlewares/auth/userMiddleware";
 
-const router = Router();
+const Routes = Router();
 
-router.post("/auth/register", postRegisterUserController);
-router.post("/auth/login", postLoginUserController);
+Routes.post("/auth/register", postRegisterUserController);
+Routes.post("/auth/login", postLoginUserController);
 
-router.get("/auth/users", getListUserController);
-router.post("/auth/user", updateUserController);
+Routes.get("/auth/users", getListUserController);
+Routes.put("/auth/user", authenticateJWT, updateUserController);
 
-export { router as Routes };
+export default Routes;

@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { postRegisterUserController } from "../controller/user/registerUserController";
-import { getListUserController } from "../controller/user/listUserController";
-import { postLoginUserController } from "../controller/user/loginUserController";
+import { postRegisterUserController } from "../controller/auth/registerUserController";
+import { getListUserController } from "../controller/auth/listUserController";
+import { postLoginUserController } from "../controller/auth/loginUserController";
 
 const router = Router();
 

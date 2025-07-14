@@ -1,7 +1,7 @@
 import { Request, Response, RequestHandler } from "express";
 
 import { createUser } from "../../model/user/registerUserModel";
-import { registerUserSchema } from "../../validates/resgisterUser.validate";
+import { registerUserSchema } from "../../validates/registerUser.validate";
 
 export const postRegisterUserController: RequestHandler = async (
   req: Request,

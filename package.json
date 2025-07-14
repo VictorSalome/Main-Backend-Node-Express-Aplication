@@ -2,6 +2,7 @@
   "name": "backend-projeto",
   "version": "1.0.0",
   "description": "Backend +A Educação - Full Stack Web Developer",
+  "linkRepo": "https://github.com/grupo-a/challenge-full-stack-web",
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc",

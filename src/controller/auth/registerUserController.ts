@@ -1,6 +1,6 @@
 import { Request, Response, RequestHandler } from "express";
 
-import { createUser } from "../../models/auth/registerUserModel";
+import { postCreateUser } from "../../models/auth/users";
 import { registerUserSchema } from "../../validates/registerUser.validate";
 
 export const postRegisterUserController: RequestHandler = async (
@@ -24,7 +24,7 @@ export const postRegisterUserController: RequestHandler = async (
 
     const { nameUser, email, password } = validationResult.data;
 
-    const newUser = await createUser({
+    const newUser = await postCreateUser({
       nameUser,
       email: email.toLowerCase(),
       password,

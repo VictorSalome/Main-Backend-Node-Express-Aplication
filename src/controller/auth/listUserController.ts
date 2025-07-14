@@ -1,13 +1,13 @@
 import { Request, Response, RequestHandler } from "express";
 
-import { getListOfUsers } from "../../models/auth/registerUserModel";
+import { getListUsers } from "../../models/auth/users";
 
 export const getListUserController: RequestHandler = async (
   req: Request,
   res: Response
 ) => {
   try {
-    const users = await getListOfUsers();
+    const users = await getListUsers();
     res.status(200).json({
       message: "Lista de usuários",
       data: users,

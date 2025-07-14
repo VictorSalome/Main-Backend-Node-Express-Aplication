@@ -18,6 +18,10 @@ export const updateUserControllerSchema = z.object({
     .optional(),
 });
 
+export const authenticateUpdateUserSchema = z.object({
+  jwt: z.string().min(1, "Token JWT é obrigatório"),
+});
+
 export type LoginUserInput = z.infer<typeof loginUserSchema>;
 export type UpdateUserControllerInput = z.infer<
   typeof updateUserControllerSchema

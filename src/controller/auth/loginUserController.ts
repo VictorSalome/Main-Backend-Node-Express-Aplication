@@ -1,6 +1,6 @@
 import { Request, Response, RequestHandler } from "express";
 import { loginUser } from "../../models/auth/loginUserModel";
-import { loginUserSchema } from "../../validates/loginUser.validade";
+import { loginUserSchema } from "../../validates/loginUserValidade";
 
 export const postLoginUserController: RequestHandler = async (
   req: Request,

@@ -1,5 +1,5 @@
 import { Request, Response, RequestHandler } from "express";
-import { updateUserControllerSchema } from "../../validates/loginUser.validade";
+import { updateUserControllerSchema } from "../../validates/loginUserValidade";
 import { updateUsers } from "../../models/user/updateUserModel";
 
 export const updateUserController: RequestHandler = async (

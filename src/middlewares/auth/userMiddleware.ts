@@ -4,7 +4,6 @@ import jwt from "jsonwebtoken";
 interface JwtPayload {
   id: string;
   email: string;
-  // add other properties as needed
   iat?: number;
   exp?: number;
 }

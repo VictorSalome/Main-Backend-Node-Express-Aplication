@@ -5,10 +5,11 @@ export interface ICreateUserData {
   nameUser: string;
   email: string;
   password: string;
+  isActive: boolean;
 }
 
 export const createUser = async (userData: ICreateUserData) => {
-  const { nameUser, email, password } = userData;
+  const { nameUser, email, password, isActive } = userData;
 
   const existingUser = await prisma.user.findUnique({
     where: { email },
@@ -26,11 +27,13 @@ export const createUser = async (userData: ICreateUserData) => {
       nameUser,
       email,
       password: hashedPassword,
+      isActive,
     },
     select: {
       id: true,
       nameUser: true,
       email: true,
+      isActive: true,
       createdAt: true,
     },
   });

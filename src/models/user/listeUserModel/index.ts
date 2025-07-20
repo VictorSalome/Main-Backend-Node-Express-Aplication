@@ -6,6 +6,7 @@ export const listUsers = async () => {
       id: true,
       nameUser: true,
       email: true,
+      isActive: true,
       createdAt: true,
     },
   });

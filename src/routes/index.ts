@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { postRegisterUserController } from "../controller/auth/registerUserController";
-import { getListUserController } from "../controller/auth/listUserController";
+import { getListUserController } from "../controller/user/listUserController";
 import { postLoginUserController } from "../controller/auth/loginUserController";
-import { updateUserController } from "../controller/auth/updateUserController";
+import { updateUserController } from "../controller/user/updateUserController";
 import { authenticateJWT } from "../middlewares/auth/userMiddleware";
 
 const Routes = Router();

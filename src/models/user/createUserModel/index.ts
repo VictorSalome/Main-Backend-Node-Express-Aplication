@@ -38,5 +38,9 @@ export const createUser = async (userData: ICreateUserData) => {
     },
   });
 
+  if (!newUser) {
+    throw new Error("Erro ao criar usuário");
+  }
+
   return newUser;
 };

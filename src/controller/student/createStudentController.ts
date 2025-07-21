@@ -17,13 +17,17 @@ export const createStudentController: RequestHandler = async (
 
     const newStudent = await createStudentModel({ name, email, CPF });
 
-    if (!newStudent) {
-      return res.status(500).json({ error: "Erro ao criar estudante" });
-    }
-
     return res.status(201).json(newStudent);
   } catch (error) {
-    console.error("Erro ao criar estudante:", error);
-    return res.status(500).json({ error: "Erro ao criar estudante" });
+    console.log("erroczxczxczxr", error);
+
+    if (
+      error instanceof Error &&
+      error.message === "Estudante com este CPF já existe"
+    ) {
+      return res.status(409).json({ error: error.message });
+    }
+
+    return res.status(500).json(error);
   }
 };

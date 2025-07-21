@@ -21,3 +21,11 @@ model User {
 
   @@map("users")
 }
+
+  model Student {
+    id        Int      @id @default(autoincrement())
+    name      String   @unique
+    email     String   @unique
+    RA        String   @unique
+    CPF       String   @unique
+  }
